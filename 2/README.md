@@ -1,2 +1,0 @@
-# silverTestC-Sharp-
-Task solution
