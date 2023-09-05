@@ -42,3 +42,19 @@ Console.WriteLine(string.Join(" ", list1.Where(x => x is Book || x is Film)
 Console.WriteLine(string.Join(" ", list1.Where(x => x is Book || x is Film)
     .GroupBy(x => new { author = ((ArtObject)x).Author, t = ((ArtObject)x).GetType() })
     .Select(x => "\n" + (x.Key.t == typeof(Book) ? "AuthorBook" : "Author Film") + x.Key.author + " " + x.Count())));
+
+
+//7. Output how many different letters used in all actors names
+
+Console.WriteLine(string.Join(" ", list1.Where(x => x is Film)
+    .GroupBy(x => (x as Film).Actors)
+    .SelectMany(x => x.Key
+                    .Select(x => x.Name))
+                    .Distinct()
+                    .Select(x => x + " - " + x.Distinct().Count())));
+//8. Output names of all books ordered by names of their authors and number of pages
+
+Console.WriteLine(string.Join(" ", list1.Where(x => x is Book)
+    .OrderBy(x => ((Book)x).Author)
+    .ThenBy(x => ((Book)x).Pages)
+    .Select(x => ((Book)x).Name + " " + ((Book)x).Pages + " " + ((Book)x).Author + "\n")));
