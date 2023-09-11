@@ -58,3 +58,21 @@ Console.WriteLine(string.Join(" ", list1.Where(x => x is Book)
     .OrderBy(x => ((Book)x).Author)
     .ThenBy(x => ((Book)x).Pages)
     .Select(x => ((Book)x).Name + " " + ((Book)x).Pages + " " + ((Book)x).Author + "\n")));
+
+
+
+//9.Output actor name and all films with this actor
+
+Console.WriteLine(string.Join(" ", list1.Where(x => x is Film)
+    .SelectMany(x => ((Film)x).Actors).GroupBy(x =>
+    new
+    {
+        film = list1.Where(y => y is Film && ((Film)y).Actors.Any(name => name.Name == x.Name))
+    })
+    .Select(x => x.First().Name + " " + string.Join(", ", x.Key.film.Select(y => ((Film)y).Name)) + "\n")));
+
+//10 Output sum of total number of pages in all books and all int values inside all sequences in data
+
+Console.WriteLine(string.Join(" ", list1.Where(x => x is Book).Sum(x => ((Book)x).Pages)
+    + list1.Where(x => x is Film).Sum(x => ((Film)x).Length)));
+
