@@ -73,6 +73,21 @@ Console.WriteLine(string.Join(" ", list1.Where(x => x is Film)
 
 //10 Output sum of total number of pages in all books and all int values inside all sequences in data
 
+
 Console.WriteLine(string.Join(" ", list1.Where(x => x is Book).Sum(x => ((Book)x).Pages)
-    + list1.Where(x => x is Film).Sum(x => ((Film)x).Length)));
+    + list1.Where(x => x is Film).Sum(x => ((Film)x).Length) + list1.OfType<IEnumerable<int>>().SelectMany(x => x).Sum()));
+
+
+//11 Get the dictionary with the key - book author, value - list of author's books
+Console.WriteLine(string.Join("\n", list1.Where(x => x is Book)
+    .GroupBy(x => ((Book)x).Author)
+    .ToDictionary(x => x.Key, x => x.ToList())));
+
+Console.WriteLine(string.Join("\n", list1
+    .Where(x => x is Book)
+    .GroupBy(x => (x as Book).Author)
+    .ToDictionary(x => x.Key, x => x.ToList())
+    .Select(x => x.Key + ": " + string.Join(", ", x.Value.Select(y => (y as Book).Name)))));
+
+//12 Output all films of "Matt Damon" excluding films with actors whose name are presented in data as strings
 
