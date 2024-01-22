@@ -1,7 +1,7 @@
 # silverTestC-Sharp-
 https://www.silvertests.ru/AvailableCourses.aspx?ID=3023
 
-1. 
+1. [ДАВАЙТЕ ПОЗНАКОМИМСЯ!](https://www.silvertests.ru/CourseView.aspx?id=34964)
 2. [ВЫВОД ТЕКСТА НА ЭКРАН](https://www.silvertests.ru/CourseView.aspx?id=34965)
 3. [ПЕРЕМЕННЫЕ. ФОРМАТЫ ВЫВОДА](https://www.silvertests.ru/CourseView.aspx?id=34999)
 4. [Модуль: Арифметические выражения](https://www.silvertests.ru/CourseView.aspx?id=35001)
