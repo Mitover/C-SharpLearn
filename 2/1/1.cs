@@ -1,8 +1,8 @@
-using System;
-class Program
+for (int i = 1; i < array.Length; i++)
 {
-    static void Main(string[] args)
+    if (array[i] > array[i - 1])
     {
-        Console.WriteLine("Everybody loves kittens");
+        countMore++;
     }
 }
+Console.WriteLine(countMore);
