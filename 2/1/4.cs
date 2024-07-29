@@ -1,11 +1,11 @@
 using System;
-class Program
+namespace Program
 {
-    static void Main()
+    class Program
     {
-        string sistem = Console.ReadLine();
-        string paswword = Console.ReadLine();
-        if (sistem == paswword) { Console.WriteLine("Access"); }
-        else { Console.WriteLine("Invalid password"); }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("\"%\\\\||//%\"");
+        }
     }
 }

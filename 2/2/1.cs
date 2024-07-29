@@ -1,10 +1,8 @@
 using System;
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        string str1 = Console.ReadLine();
-        str1 = str1.Replace("@", "");
-        Console.WriteLine(str1);
+        Console.WriteLine("Everybody loves kittens");
     }
 }

@@ -1,11 +1,11 @@
 using System;
-using System.Security.Cryptography;
-
-class Program
+namespace Program
 {
-    static void Main()
+    class Program
     {
-        string str = Console.ReadLine();
-        Console.WriteLine(str.Replace("1", "one"));
+        static void Main(string[] args)
+        {
+            Console.WriteLine("\"%\\\\||//%\"");
+        }
     }
 }
